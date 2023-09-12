@@ -1,0 +1,27 @@
+@import '../../../../../styles/variables';
+
+:host{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -20px;
+
+  .add-task{
+    width: 80%;
+    height: 50px;
+    padding: 10px 40px;
+    font-size: 26px;
+    text-align: center;
+    border: none;
+    background-color: $tertiary-background-color;
+    color: $secondary-text-color;
+
+    &::placeholder {
+      color: $secondary-text-color;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

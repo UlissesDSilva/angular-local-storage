@@ -1,0 +1,31 @@
+<div class="list" *ngIf="taskList.length; else notList">
+  <ul>
+    <li *ngFor="let task of taskList; let i = index">
+      <div class="list__item">
+        <div class="list__item-todo">
+          <input type="checkbox" [(ngModel)]="task.done">
+          <input
+            type="text"
+            [(ngModel)]="task.name"
+            [ngClass]="{'checked': task.done}"
+            (keyup.enter)="validationInput(task.name, i)">
+        </div>
+        <div>
+          <mat-icon
+            color="primary"
+            class="list__item-icon-trash"
+            (click)="removeTask(i)">
+            restore_from_trash
+          </mat-icon>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+<ng-template #notList>
+  <div class="todo-img">
+    <img src="{{ img }}" alt="">
+  </div>
+</ng-template>
+<app-input-add-items (sendName)="addTask($event)"></app-input-add-items>
+<app-btn-delete-all *ngIf="taskList.length" (click)="deleteAll()"></app-btn-delete-all>

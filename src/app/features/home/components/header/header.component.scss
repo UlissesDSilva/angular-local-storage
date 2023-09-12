@@ -1,0 +1,10 @@
+@import '../../../../../styles/variables';
+
+h1{
+  width: 100%;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 28px;
+  color: $secondary-text-color;
+  background-color: $tertiary-background-color;
+}
